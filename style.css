@@ -1,0 +1,123 @@
+/* Base Styling - Dark Theme */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: #000;
+}
+
+header {
+    padding: 20px;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #222;
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #aaa;
+}
+
+.file-tree {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #444;
+    background-color: #111;
+}
+
+.file-tree ul {
+    list-style-type: none;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.file-tree li {
+    cursor: pointer;
+    position: relative;
+    color: #fff;
+}
+
+.file-tree li[data-folder="true"]:before {
+    content: "▶";
+    font-size: 12px;
+    margin-right: 5px;
+    transition: transform 0.2s ease;
+    color: #fff;
+}
+
+.file-tree li.collapsed > ul {
+    display: none;
+}
+
+.file-tree li.collapsed[data-folder="true"]:before {
+    transform: rotate(90deg);
+}
+
+.file-tree a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.file-tree a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile-Friendly Adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation vertically */
+        padding: 5px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .file-tree {
+        margin: 10px;
+        padding: 15px;
+    }
+}
+
+/* Additional Small-Screen Adjustments */
+@media (max-width: 480px) {
+    header {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    .file-tree ul {
+        margin-left: 10px; /* Slightly less indentation */
+    }
+
+    .file-tree {
+        padding: 10px;
+        font-size: 0.9rem; /* Slightly smaller font */
+    }
+}
